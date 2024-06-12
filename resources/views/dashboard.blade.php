@@ -6,6 +6,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tweet App</title>
+        <x-slot name="title">
+            Dashboard
+        </x-slot>
+
         <style>
             .notif-sukses {
                 background-color: #d4edda;
