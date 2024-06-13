@@ -110,7 +110,11 @@
                                 </div>
                                 <div class="card-action">
                                     <a href="{{ route('tweets.edit', $tweet->id) }}" class="btn btn-kuning">Edit!</a>
-                                    
+                                    <form action="{{ route('tweets.hapus', $tweet->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" class="btn btn-merah" value="Hapus">
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
