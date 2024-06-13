@@ -38,7 +38,40 @@ class TweetController extends Controller
 
         ]);
     }
+    
+    // function halaman edit
+    public function edit($id)
+    {
 
+        // mengirim data 'tweet' yg diambil dari file models Tweet berdasarkan id
+        return view('tweets/edit', [
+
+            // mencari sebuah sebuah tweet dari database berdasarkan id
+            // dan disimpan di dalam variabel 'tweet', variabel ini nantinya dapat digunakan di tempat lain
+            'tweet' => Tweet::find($id),
+        ]);
+    }
+
+
+    // function menyimpan hasil edit
+    public function update(Request $request, $id)
+    {
+
+       
+        $tweet = Tweet::find($id);
+
+        $tweet->update([
+            'user_id' => auth()->id(), //user yang sedang login
+            'postingan' => $request->postingan,
+        ]);
+
+        // setelah berhasil menyimpan tweet, maka kirim session flash
+        session()->flash('success', 'Berhasil update tweet');
+
+        // balik ke halaman dashboard jika berhasil 
+        return to_route('dashboard');
+
+    }
     
 }
 
