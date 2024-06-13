@@ -73,6 +73,18 @@ class TweetController extends Controller
 
     }
     
+    public function hapus($id)
+    {
+       $tweet = Tweet::find($id);
+
+       $tweet->delete();
+
+       session()->flash('danger', 'Berhasil hapus tweet');
+
+        // balik ke halaman dashboard jika berhasil 
+        return to_route('dashboard');
+    }
+    
 }
 
 
