@@ -14,7 +14,20 @@
                                     name="postingan"  
                                     rows="3" 
                                     class=" textarea textarea-bordered 
+
+                                    @error ('postingan')
+                                        textarea-error
+                                    @enderror mb-2" 
+
+
                                     placeholder="tuliskan tweet"></textarea>
+
+                                    @error('postingan')
+                                    {{-- message error bawaan dari blade --}}
+                                    <span class="text-error">{{ $message }}</span>
+                                    @enderror
+
+
 
                             <input type="submit" value="Posting!" class="btn btn-outline btn-info">
                         </form>
