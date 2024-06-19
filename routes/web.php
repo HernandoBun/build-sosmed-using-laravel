@@ -27,6 +27,16 @@ Route::post('/tweets', [TweetController::class, 'simpan'])
     ->name('tweets.simpan');
 
 
+Route::get('/tweets/{id}', [TweetController::class, 'edit'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.edit');
 
 
+Route::put('/tweets/{id}', [TweetController::class, 'update'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.update');
+
+Route::delete('/tweets/{id}', [TweetController::class, 'hapus'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.hapus');
 require __DIR__.'/auth.php';
