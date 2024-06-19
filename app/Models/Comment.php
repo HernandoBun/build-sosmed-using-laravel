@@ -15,4 +15,23 @@ class Comment extends Model
         'komentar'
     ];
 
+    public function tweet()
+    {
+        // komentar merupakan kepunyaan tweet
+        return $this->belongsTo(Tweet::class);
+    }
+
+    // membuat relasi untuk menampilkan user yang berkomentar
+    public function user()
+    {
+        // komentar merupakan kepunyaan user
+        return $this->belongsTo(User::class);
+    }
+
+    // membuat relasi untuk menampilkan komentar
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }
