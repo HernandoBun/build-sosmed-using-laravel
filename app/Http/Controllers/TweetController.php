@@ -15,6 +15,11 @@ class TweetController extends Controller
     public function simpan(Request $request)
     {
 
+        $request->validate([
+            'postingan' => ['required'],
+        ]);
+
+
         // jika menggunakan create harus mendefinisikan $fillable di file model Tweet
         Tweet::create([
             'user_id' => auth()->id(), //user yang sedang login
