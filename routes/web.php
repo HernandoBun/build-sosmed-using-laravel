@@ -39,4 +39,15 @@ Route::put('/tweets/{id}', [TweetController::class, 'update'])
 Route::delete('/tweets/{id}', [TweetController::class, 'hapus'])
     ->middleware(['auth', 'verified'])
     ->name('tweets.hapus');
+
+    Route::get('/perluas/{tweet}', [TweetController::class, 'perluas'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.perluas');
+
+
+Route::post('tweets/{tweets}/comments', [CommentController::class, 'store'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.store');
+
+
 require __DIR__.'/auth.php';
