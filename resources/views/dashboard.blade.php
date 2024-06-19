@@ -6,7 +6,7 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
 
-                    <div class="p-6 text-gray-900 mb-2">
+                    <div class="p-6 text-white-900 mb-2">
 
                         <form action="{{ route('tweets.simpan') }}" class="form-control" method="POST">
                             @csrf
