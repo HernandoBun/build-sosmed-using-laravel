@@ -16,5 +16,29 @@
         </div>
         <div class="divider divider-accent">KOMENTAR</div>
     </div>
+
+    <div class=" p-2 text-w-5000">
+
+        <form action="{{ route('comments.store', $tweet) }}" class="form-control" method="POST">
+            @csrf
+            <textarea 
+                    name="komentar"  
+                    rows="3" 
+                    class=" textarea textarea-bordered 
+
+                    @error ('komentar')
+                    textarea-error
+                    @enderror mb-2" 
+
+                    placeholder="tuliskan komentar"></textarea>
+
+                    @error('komentar')
+                            {{-- message error bawaan dari blade --}}
+                        <span class="text-error">{{ $message }}</span>
+                    @enderror
+
+            <input type="submit" value="Komen!" class="btn btn-outline btn-success">
+        </form>
+    </div>
    
 </x-app-layout>
