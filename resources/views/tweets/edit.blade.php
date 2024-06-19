@@ -12,6 +12,10 @@
 
                 <input type="submit" value="Edit!" class="btn btn-secondary mt-4" style="width: 3cm">
             </form>
+            <div>
+                <a href="{{ route('dashboard')}}" class="btn btn-error">Kembali</a>
+            </div>
         </div>
+
    </div>
 </x-app-layout>
