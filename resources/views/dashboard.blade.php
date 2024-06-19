@@ -6,7 +6,7 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
 
-                    <div class="p-6 text-gray-900 mb-2">
+                    <div class="p-6 text-white-900 mb-2">
 
                         <form action="{{ route('tweets.simpan') }}" class="form-control" method="POST">
                             @csrf
@@ -14,7 +14,20 @@
                                     name="postingan"  
                                     rows="3" 
                                     class=" textarea textarea-bordered 
+
+                                    @error ('postingan')
+                                        textarea-error
+                                    @enderror mb-2" 
+
+
                                     placeholder="tuliskan tweet"></textarea>
+
+                                    @error('postingan')
+                                    {{-- message error bawaan dari blade --}}
+                                    <span class="text-error">{{ $message }}</span>
+                                    @enderror
+
+
 
                             <input type="submit" value="Posting!" class="btn btn-outline btn-info">
                         </form>
