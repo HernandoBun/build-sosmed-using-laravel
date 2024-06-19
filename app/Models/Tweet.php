@@ -22,4 +22,11 @@ class Tweet extends Model
         // sebuah tweet merupakan kepunyaan user
         return $this->belongsTo(User::class);
     }
+
+    // membuat relasi antara tweet dengan komentar
+    public function comments()
+    {
+        // tweet dapat mempunyai banyak komentar
+        return $this->hasMany(Comment::class);
+    }
 }
