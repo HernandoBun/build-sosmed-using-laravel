@@ -4,15 +4,25 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 This project is combining two of my previously created apps to create a social media platform.
 
 # Usage
+Download Postgresql [https://www.postgresql.org/download/]
+**Create Database 'sosmed'**
+
+Install Composer
+Generate Key for ENV
+php artisan migrate for create table database
 Install NPM package before running the code
+
 ```sh
- npm install      
+composer install
+php artisan key:generate
+php artisan migrate
+npm install      
 ```
 Run the command (default port: '8000')
 sebelum php artisan serve, ketik npm run dev
 ```sh
- npm run dev      
- php artisan serve 
+npm run dev      
+php artisan serve 
 ```
 ### Tech
 
@@ -21,14 +31,14 @@ Used technologies for this project:
 * [Laravel] - Best framework for creating awesome apps fast.
 * [PHP] - for the best web apps!
 * [PostgresSql] - awesome database.
-* [Alphine.js] - For Interactive.
-* [Tailwind] - UI design.
-* [Github] - duh.
-  
+* [DaisyUI]- Awesome Library UI
 
 ## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Mario Samuel Budiono - 535230091
+Louis Chuannata - 535230130
+Hernando Bun - 535230133
+Indry Ryanto - 535230134
+Darren Amadeus Kurniawan - 535230165
 
 ## Code of Conduct
 
