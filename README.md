@@ -4,13 +4,13 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 This project is combining two of my previously created apps to create a social media platform.
 
 # Usage
-Download Postgresql [https://www.postgresql.org/download/]
+*Download Postgresql [https://www.postgresql.org/download/], 
 **Create Database 'sosmed'**
 
-Install Composer
-Generate Key for ENV
-php artisan migrate for create table database
-Install NPM package before running the code
+*Install Composer, 
+*Generate Key for ENV, 
+*php artisan migrate for create table database, 
+*Install NPM package before running the code
 
 ```sh
 composer install
@@ -18,7 +18,7 @@ php artisan key:generate
 php artisan migrate
 npm install      
 ```
-Run the command (default port: '8000')
+Run the command (default port: '8000'), 
 sebelum php artisan serve, ketik npm run dev
 ```sh
 npm run dev      
