@@ -19,7 +19,7 @@ php artisan migrate
 npm install      
 ```
 Run the command (default port: '8000') <br />
-sebelum php artisan serve, ketik npm run dev <br />
+before 'php artisan serve' , type 'npm run dev' <br />
 ```sh
 npm run dev      
 php artisan serve 
