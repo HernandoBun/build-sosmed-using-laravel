@@ -1,16 +1,16 @@
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-# Laravel Socialmedia project
-This project is combining two of my previously created apps to create a social media platform.
+# Laravel Social Media project
+This project is Creating Social Media using Laravel Breeze, Daisy UI.
 
 # Usage
-*Download Postgresql [https://www.postgresql.org/download/], 
+*Download Postgresql [https://www.postgresql.org/download/] <br />
 **Create Database 'sosmed'**
 
-*Install Composer, 
-*Generate Key for ENV, 
-*php artisan migrate for create table database, 
-*Install NPM package before running the code
+Install Composer <br />
+Generate Key for ENV <br />
+php artisan migrate for create table database <br />
+Install NPM package before running the code <br />
 
 ```sh
 composer install
@@ -18,8 +18,8 @@ php artisan key:generate
 php artisan migrate
 npm install      
 ```
-Run the command (default port: '8000'), 
-sebelum php artisan serve, ketik npm run dev
+Run the command (default port: '8000') <br />
+sebelum php artisan serve, ketik npm run dev <br />
 ```sh
 npm run dev      
 php artisan serve 
@@ -34,11 +34,11 @@ Used technologies for this project:
 * [DaisyUI]- Awesome Library UI
 
 ## Contributing
-Mario Samuel Budiono - 535230091
-Louis Chuannata - 535230130
-Hernando Bun - 535230133
-Indry Ryanto - 535230134
-Darren Amadeus Kurniawan - 535230165
+Mario Samuel Budiono - 535230091 <br />
+Louis Chuannata - 535230130 <br />
+Hernando Bun - 535230133 <br />
+Indry Ryanto - 535230134 <br />
+Darren Amadeus Kurniawan - 535230165 <br />
 
 ## Code of Conduct
 
