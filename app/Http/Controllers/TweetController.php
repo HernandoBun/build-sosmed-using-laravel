@@ -89,7 +89,15 @@ class TweetController extends Controller
         // balik ke halaman dashboard jika berhasil 
         return to_route('dashboard');
     }
+
+    public function perluas($tweet)
+    {
+        return view('tweets/perluas', [
+            'tweet' => Tweet::find($tweet)
+                                  # parameter
+        ]);
     
 }
 
 
+}

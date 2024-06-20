@@ -47,6 +47,7 @@
                             </div>
 
                             <div class="card-action p-3 ">
+                                <a href="{{ route('tweets.perluas', $tweet->id) }}" class=" btn btn-accent mb-2">Komentar</a>
                                 <a href="{{ route('tweets.edit', $tweet->id) }}" class="btn btn-warning">Edit!</a>
                                 <form action="{{ route('tweets.hapus', $tweet->id) }}" method="POST" style="display:inline">
                                     @csrf
