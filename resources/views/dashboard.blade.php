@@ -48,12 +48,20 @@
 
                             <div class="card-action p-3 ">
                                 <a href="{{ route('tweets.perluas', $tweet->id) }}" class=" btn btn-accent mb-2">Komentar</a>
+                                
+                                {{-- hanya user tersebut yang bisa edit tweetnya --}}
+                            @if ($tweet->user_id == auth()->id())
                                 <a href="{{ route('tweets.edit', $tweet->id) }}" class="btn btn-warning">Edit!</a>
+                            @endif
+                                
+                            {{-- hanya user tersebut yang bisa hapus tweetnya --}}
+                            @if ($tweet->user_id == auth()->id())
                                 <form action="{{ route('tweets.hapus', $tweet->id) }}" method="POST" style="display:inline">
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" class="btn btn-error" value="Hapus">
                                 </form>
+                            @endif
 				<p class="text-end p-3 text-xs" style="display:inline">{{ $tweet->created_at->diffForHumans() }}</p>
                             </div>
 
