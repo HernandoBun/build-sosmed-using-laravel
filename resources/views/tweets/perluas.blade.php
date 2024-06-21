@@ -50,10 +50,10 @@
 
                     {{-- tweet user --}}
                     <p>{{ $comment->komentar }}</p>
+                    <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning w-20">Edit!</a>
                 </div>
-
             </div>
-            <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
+           
         @endforeach
 
         
