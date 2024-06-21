@@ -41,6 +41,19 @@ class CommentController extends Controller
         return to_route('tweets.perluas', $tweet);
     }
 
+    public function destroy($tweet, $comment)
+    {
+        $comment = Comment::find($comment);
+
+        $comment->delete();
+
+        session()->flash('danger', 'Berhasil menghapus komentar');
+
+
+        return to_route('tweets.perluas', $tweet);
+    }
+
+
 
 
     
