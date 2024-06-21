@@ -50,19 +50,20 @@
 
                     {{-- tweet user --}}
                     <p>{{ $comment->komentar }}</p>
-                    <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning w-20">Edit!</a>
+                    <div class="card-action mt-6">
+
+                        <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
+                        
+                        <form action="{{ route('comments.destroy', [$tweet, $comment]) }}" method="POST" style="display:inline">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-error" value="Hapus">
+                    </form>
+                        
+                    </div>
                 </div>
             </div>
 
-            <div class="card-action">
-
-            <form action="{{ route('comments.destroy', [$tweet, $comment]) }}" method="POST" style="display:inline">
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-error" value="Hapus">
-            </form>
-                
-            </div>
            
         @endforeach
 

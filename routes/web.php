@@ -58,4 +58,8 @@ Route::put('tweets/{tweet}/comments/{comment}', [CommentController::class, 'upda
     ->middleware('auth', 'verified')
     ->name('comments.update');
     
+Route::delete('tweets/{tweet}/comments/{comment}', [CommentController::class, 'destroy'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.destroy');
+    
 require __DIR__.'/auth.php';
