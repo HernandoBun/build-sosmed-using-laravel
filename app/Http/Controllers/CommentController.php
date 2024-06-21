@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+
     public function store (Request $request, $tweet)
     {
+
+        $request->validate([
+            'komentar' => ['required'],
+        ]);
                 
         Comment::create([
             'tweet_id' => $tweet,
