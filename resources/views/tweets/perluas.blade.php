@@ -51,8 +51,11 @@
                     {{-- tweet user --}}
                     <p>{{ $comment->komentar }}</p>
                     <div class="card-action mt-6">
+                        {{-- hanya user tersebut yang bisa edit komentarnya --}}
 
-                        <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
+                        @if ($comment->user_id == auth()->id())
+                            <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
+                        @endif
                         
                         <form action="{{ route('comments.destroy', [$tweet, $comment]) }}" method="POST" style="display:inline">
                         @csrf
