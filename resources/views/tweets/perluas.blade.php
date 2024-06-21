@@ -57,12 +57,13 @@
                             <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
                         @endif
                         
-                        <form action="{{ route('comments.destroy', [$tweet, $comment]) }}" method="POST" style="display:inline">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-error" value="Hapus">
-                    </form>
-                        
+                        @if ($comment->user_id == auth()->id())
+                                <form action="{{ route('comments.destroy', [$tweet, $comment]) }}" method="POST" style="display:inline">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-error" value="Hapus">
+                            </form>
+                        @endif
                     </div>
                 </div>
             </div>
