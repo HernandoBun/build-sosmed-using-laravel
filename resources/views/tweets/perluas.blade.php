@@ -53,7 +53,10 @@
                 </div>
 
             </div>
+            <a href="{{ route('comments.edit', [$tweet, $comment]) }}" class="btn btn-warning">Edit!</a>
         @endforeach
+
+        
     </div>
     </div>
    
