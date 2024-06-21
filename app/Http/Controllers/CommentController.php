@@ -21,4 +21,42 @@ class CommentController extends Controller
         return redirect()->back();
     }
 
+    public function edit ($tweet, $comment)
+    {
+        return view('comments.edit', [
+            'comment' => Comment::find($comment)
+        ]);
+    }
+
+    public function update (Request $request, $tweet, $comment)
+    {
+        $comment = Comment::find($comment);
+
+        $comment->update([
+            'komentar' => $request->komentar
+        ]);
+        
+        session()->flash('success', 'Berhasil memperbarui komentar');
+
+        return to_route('tweets.perluas', $tweet);
+    }
+
+    public function destroy($tweet, $comment)
+    {
+        $comment = Comment::find($comment);
+
+        $comment->delete();
+
+        session()->flash('danger', 'Berhasil menghapus komentar');
+
+
+        return to_route('tweets.perluas', $tweet);
+    }
+
+
+
+
+    
+
+
 }
