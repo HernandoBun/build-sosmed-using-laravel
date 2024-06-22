@@ -39,4 +39,27 @@ Route::put('/tweets/{id}', [TweetController::class, 'update'])
 Route::delete('/tweets/{id}', [TweetController::class, 'hapus'])
     ->middleware(['auth', 'verified'])
     ->name('tweets.hapus');
+
+    Route::get('/perluas/{tweet}', [TweetController::class, 'perluas'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.perluas');
+
+
+Route::post('tweets/{tweets}/comments', [CommentController::class, 'store'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.store');
+
+    Route::get('tweets/{tweet}/comments/{comment}/edit', [CommentController::class, 'edit'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.edit');
+
+
+Route::put('tweets/{tweet}/comments/{comment}', [CommentController::class, 'update'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.update');
+    
+Route::delete('tweets/{tweet}/comments/{comment}', [CommentController::class, 'destroy'] )
+    ->middleware('auth', 'verified')
+    ->name('comments.destroy');
+    
 require __DIR__.'/auth.php';
