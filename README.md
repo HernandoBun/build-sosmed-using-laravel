@@ -22,7 +22,10 @@ Run the command (default port: '8000') <br />
 before 'php artisan serve' , type 'npm run dev' <br />
 ```sh
 npm run dev      
-php artisan serve 
+```
+in a Different Terminal Type :
+```sh
+php artisan serve
 ```
 ### Tech
 
